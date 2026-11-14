@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080b14">
-<meta name="description" content="Promusic مشغل الموسيقى الخاص بك. استمتع بموسيقاك بتصميم أنيق وتجربة استماع مميزة.">
-<title>Promusic — تجربة موسيقية مختلفة</title>
+<meta name="description" content="App Lap — حمل تطبيقاتنا المميزة: Promusic و Pro Player و ProAzan. تجربة استخدام راقية وتحميل مباشر.">
+<title>App Lap — تطبيقات مميزة بتجربة مختلفة</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
@@ -75,7 +75,6 @@ a {
 }
 
 /* Navigation */
-
 nav {
     height: 85px;
     display: flex;
@@ -88,21 +87,23 @@ nav {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 900;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .brand-logo {
-    width: 43px;
-    height: 43px;
+    width: 46px;
+    height: 46px;
     border-radius: 14px;
     display: grid;
     place-items: center;
     background: linear-gradient(135deg, var(--cyan), var(--purple));
     color: #080b14;
-    font-size: 25px;
+    font-size: 18px;
+    font-weight: 900;
     box-shadow: 0 0 25px #38d9ff35;
+    letter-spacing: -1px;
 }
 
 .brand span {
@@ -120,14 +121,13 @@ nav {
 }
 
 /* Hero */
-
 .hero {
-    min-height: 600px;
+    min-height: 520px;
     display: grid;
-    grid-template-columns: 1.1fr .9fr;
+    grid-template-columns: 1.15fr 0.85fr;
     align-items: center;
     gap: 50px;
-    padding: 65px 0;
+    padding: 70px 0 50px;
 }
 
 .tag {
@@ -152,8 +152,8 @@ nav {
 }
 
 .hero h1 {
-    font-size: clamp(42px, 6vw, 70px);
-    line-height: 1.3;
+    font-size: clamp(38px, 5.5vw, 62px);
+    line-height: 1.35;
     font-weight: 900;
     margin-bottom: 20px;
 }
@@ -161,15 +161,16 @@ nav {
 .gradient-text {
     background: linear-gradient(90deg, var(--cyan), #a78bfa);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
 .hero p {
     color: var(--muted);
-    line-height: 2.1;
+    line-height: 2;
     font-size: 16px;
     max-width: 520px;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
 
 .actions {
@@ -179,7 +180,7 @@ nav {
 }
 
 .btn {
-    padding: 14px 25px;
+    padding: 14px 26px;
     border-radius: 13px;
     display: inline-flex;
     justify-content: center;
@@ -189,6 +190,8 @@ nav {
     font-weight: 800;
     transition: .3s;
     cursor: pointer;
+    border: none;
+    font-size: 15px;
 }
 
 .btn-primary {
@@ -205,6 +208,7 @@ nav {
 .btn-secondary {
     border: 1px solid #ffffff25;
     color: white;
+    background: transparent;
 }
 
 .btn-secondary:hover {
@@ -212,8 +216,7 @@ nav {
     color: var(--cyan);
 }
 
-/* Player preview */
-
+/* Phone / preview side */
 .preview {
     display: flex;
     justify-content: center;
@@ -221,126 +224,58 @@ nav {
     position: relative;
 }
 
-.phone {
-    width: 275px;
-    padding: 13px;
-    background: linear-gradient(145deg, #30394d, #101522 50%);
-    border: 1px solid #ffffff25;
-    border-radius: 37px;
-    box-shadow: 0 30px 90px #000a;
-    transform: rotate(-4deg);
-    animation: float 5s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%,100% { transform: translateY(0) rotate(-4deg); }
-    50% { transform: translateY(-15px) rotate(-2deg); }
-}
-
-.phone-screen {
-    background: linear-gradient(160deg, #151e32, #090e19);
-    border-radius: 27px;
-    padding: 25px 17px;
-    min-height: 440px;
-    text-align: center;
-    overflow: hidden;
-}
-
-.screen-top {
+.apps-preview {
     display: flex;
-    justify-content: space-between;
-    color: var(--muted);
-    font-size: 11px;
-    margin-bottom: 30px;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 340px;
 }
 
-.mini-logo {
-    color: var(--cyan);
-    font-size: 19px;
-    font-weight: 900;
-}
-
-.album {
-    width: 175px;
-    height: 175px;
-    border-radius: 25px;
-    margin: 0 auto 25px;
-    background:
-    radial-gradient(circle at 50% 45%, #38d9ff 0 3%, transparent 4%),
-    repeating-radial-gradient(circle at center, #263e60 0 3px, #121d36 5px 9px);
-    box-shadow: 0 0 45px #38d9ff25;
-    display: grid;
-    place-items: center;
-}
-
-.album-icon {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    background: linear-gradient(135deg, var(--cyan), var(--purple));
-    color: #080b14;
-    font-size: 30px;
-}
-
-.song-name {
-    font-size: 18px;
-    font-weight: 800;
-}
-
-.artist {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 5px;
-}
-
-.progress {
-    height: 4px;
-    background: #ffffff20;
-    border-radius: 10px;
-    margin: 25px 0 9px;
-}
-
-.progress span {
-    display: block;
-    width: 45%;
-    height: 100%;
-    background: var(--cyan);
-    border-radius: 10px;
-}
-
-.time {
-    display: flex;
-    justify-content: space-between;
-    font-size: 10px;
-    color: var(--muted);
-}
-
-.controls {
+.mini-app {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 25px;
-    font-size: 18px;
+    gap: 14px;
+    background: linear-gradient(145deg, #151e30, #0e1421);
+    border: 1px solid #ffffff15;
+    border-radius: 18px;
+    padding: 14px 16px;
+    transition: .3s;
 }
 
-.play {
+.mini-app:hover {
+    border-color: #38d9ff40;
+    transform: translateX(-6px);
+}
+
+.mini-icon {
     width: 48px;
     height: 48px;
-    background: linear-gradient(135deg, var(--cyan), var(--purple));
-    color: #080b14;
+    border-radius: 14px;
     display: grid;
     place-items: center;
-    border-radius: 50%;
-    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.mini-icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.mini-info h4 {
+    font-size: 15px;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+
+.mini-info span {
+    font-size: 12px;
+    color: var(--muted);
 }
 
 /* Section */
-
 section {
-    padding: 75px 0;
+    padding: 70px 0;
 }
 
 .section-title {
@@ -356,106 +291,174 @@ section {
 
 .section-title p {
     color: var(--muted);
+    font-size: 15px;
+}
+
+/* Apps Grid */
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.app-card {
+    background: linear-gradient(145deg, #151e30, #0e1421);
+    border: 1px solid #ffffff12;
+    border-radius: 24px;
+    padding: 28px 24px;
+    transition: .3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.app-card:hover {
+    transform: translateY(-8px);
+    border-color: #38d9ff45;
+    box-shadow: 0 20px 50px #0005;
+}
+
+.app-icon {
+    width: 78px;
+    height: 78px;
+    border-radius: 22px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px #0006;
+}
+
+.app-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.app-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.app-card p {
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.9;
+    margin-bottom: 22px;
+    flex-grow: 1;
+}
+
+.app-card .btn {
+    width: 100%;
+    padding: 13px 18px;
     font-size: 14px;
 }
 
-/* Features */
+.app-badge {
+    font-size: 11px;
+    color: var(--cyan);
+    background: #38d9ff15;
+    border: 1px solid #38d9ff30;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
 
+/* Features strip */
 .features {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 18px;
+    margin-top: 20px;
 }
 
 .feature {
-    padding: 27px 22px;
+    padding: 24px 20px;
     background: linear-gradient(145deg, #151e30, #0e1421);
     border: 1px solid #ffffff12;
-    border-radius: 20px;
+    border-radius: 18px;
+    text-align: center;
     transition: .3s;
 }
 
 .feature:hover {
-    transform: translateY(-7px);
-    border-color: #38d9ff55;
+    border-color: #38d9ff40;
 }
 
 .feature-icon {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     display: grid;
     place-items: center;
-    border-radius: 15px;
+    border-radius: 14px;
     background: #38d9ff13;
     color: var(--cyan);
-    font-size: 23px;
-    margin-bottom: 18px;
+    font-size: 22px;
+    margin: 0 auto 14px;
 }
 
 .feature h3 {
-    font-size: 17px;
-    margin-bottom: 8px;
+    font-size: 16px;
+    margin-bottom: 6px;
 }
 
 .feature p {
     color: var(--muted);
     font-size: 13px;
-    line-height: 2;
+    line-height: 1.8;
 }
 
-/* Download */
-
+/* Download CTA */
 .download-box {
     text-align: center;
-    padding: 55px 25px;
+    padding: 55px 30px;
     border: 1px solid #38d9ff35;
-    border-radius: 27px;
+    border-radius: 28px;
     background: linear-gradient(130deg, #17283b, #17132e);
     box-shadow: 0 20px 70px #0004;
 }
 
+.download-box .brand-logo {
+    margin: 0 auto 18px;
+}
+
 .download-box h2 {
-    font-size: 32px;
+    font-size: 30px;
     margin-bottom: 12px;
 }
 
 .download-box p {
     color: var(--muted);
-    margin-bottom: 25px;
-}
-
-.download-info {
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-    margin-top: 25px;
-    color: #cbd5e1;
-    font-size: 13px;
-    flex-wrap: wrap;
+    margin-bottom: 28px;
+    font-size: 15px;
 }
 
 /* Footer */
-
 footer {
-    padding: 30px 0;
+    padding: 32px 0;
     border-top: 1px solid #ffffff12;
     text-align: center;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 13px;
 }
 
 footer strong {
     color: var(--cyan);
 }
 
-/* Mobile */
+/* Responsive */
+@media (max-width: 900px) {
+    .apps-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
 
-@media(max-width: 750px) {
+@media (max-width: 750px) {
     .hero {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 55px;
-        padding: 65px 0;
+        gap: 45px;
+        padding: 50px 0 40px;
     }
 
     .hero p {
@@ -467,24 +470,28 @@ footer strong {
         justify-content: center;
     }
 
-    .preview {
-        margin: 15px 0;
+    .apps-preview {
+        max-width: 100%;
     }
 
     .features {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 
     .section-title h2 {
-        font-size: 27px;
+        font-size: 28px;
     }
 
     .download-box h2 {
-        font-size: 25px;
+        font-size: 24px;
     }
 }
 
-@media(max-width: 450px) {
+@media (max-width: 520px) {
+    .apps-grid {
+        grid-template-columns: 1fr;
+    }
+
     .container {
         width: 92%;
     }
@@ -494,30 +501,17 @@ footer strong {
     }
 
     .brand {
-        font-size: 21px;
-    }
-
-    .nav-link {
-        font-size: 12px;
+        font-size: 20px;
     }
 
     .hero h1 {
-        font-size: 43px;
-    }
-
-    .features {
-        grid-template-columns: 1fr;
-    }
-
-    .phone {
-        width: 260px;
+        font-size: 36px;
     }
 
     .btn {
         width: 100%;
     }
 }
-
 </style>
 </head>
 
@@ -525,181 +519,213 @@ footer strong {
 
 <div class="container">
 
+<!-- Nav -->
 <nav>
     <a href="#" class="brand">
-        <div class="brand-logo">P</div>
-        Pro<span>music</span>
+        <div class="brand-logo">AL</div>
+        App <span>Lap</span>
     </a>
-
-    <a href="#download" class="nav-link">تحميل التطبيق ↓</a>
+    <a href="#apps" class="nav-link">التطبيقات ↓</a>
 </nav>
 
 <!-- Hero -->
-
 <main class="hero">
-
     <div>
-        <div class="tag"><i></i> تجربة موسيقية مميزة</div>
+        <div class="tag"><i></i> منصة تطبيقات مميزة</div>
 
         <h1>
-            موسيقاك..<br>
-            <span class="gradient-text">بأسلوب مختلف.</span>
+            تطبيقاتنا..<br>
+            <span class="gradient-text">بجودة مختلفة.</span>
         </h1>
 
         <p>
-            اكتشف تجربة استماع موسيقية بتصميم عصري وأنيق.
-            استمتع بملفاتك الصوتية في مكان واحد مع Promusic.
+            مرحباً بك في <strong>App Lap</strong> — منصة تقدم تطبيقات أندرويد بتصميم أنيق وتجربة استخدام مريحة.
+            حمّل الآن واستمتع بـ Promusic و Pro Player و ProAzan.
         </p>
 
         <div class="actions">
-            <a href="https://drive.google.com/uc?export=download&id=1Li7l96rCvOBcbeC-uQkNIePNBrbOOgp7"
-               class="btn btn-primary">
-                ↓ تحميل التطبيق
+            <a href="#apps" class="btn btn-primary">
+                استعرض التطبيقات
             </a>
-
-            <a href="#features" class="btn btn-secondary">
-                اكتشف المميزات
+            <a href="#download" class="btn btn-secondary">
+                تحميل مباشر
             </a>
         </div>
     </div>
 
-    <!-- Phone Preview -->
-
+    <!-- Side preview of the 3 apps -->
     <div class="preview">
-        <div class="phone">
-            <div class="phone-screen">
+        <div class="apps-preview">
 
-                <div class="screen-top">
-                    <span>9:41</span>
-                    <span>● ● ●</span>
+            <div class="mini-app">
+                <div class="mini-icon" style="background: linear-gradient(135deg, #38d9ff, #818cf8);">
+                    <!-- Music note -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#080b14" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 18V5l12-2v13"/>
+                        <circle cx="6" cy="18" r="3"/>
+                        <circle cx="18" cy="16" r="3"/>
+                    </svg>
                 </div>
-
-                <div class="mini-logo">Promusic.</div>
-
-                <div style="margin:25px 0 15px;color:#94a3b8;font-size:12px">
-                    يتم التشغيل الآن
+                <div class="mini-info">
+                    <h4>Promusic</h4>
+                    <span>مشغل موسيقى</span>
                 </div>
-
-                <div class="album">
-                    <div class="album-icon">♫</div>
-                </div>
-
-                <div class="song-name">Your Music</div>
-                <div class="artist">Your Favorite Artist</div>
-
-                <div class="progress"><span></span></div>
-
-                <div class="time">
-                    <span>01:25</span>
-                    <span>03:45</span>
-                </div>
-
-                <div class="controls">
-                    <span>↻</span>
-                    <span>◀</span>
-                    <div class="play">▶</div>
-                    <span>▶</span>
-                    <span>≡</span>
-                </div>
-
             </div>
+
+            <div class="mini-app">
+                <div class="mini-icon" style="background: linear-gradient(135deg, #f472b6, #c084fc);">
+                    <!-- Play / video -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#080b14" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="3"/>
+                        <polygon points="10 9 16 12 10 15 10 9" fill="#080b14"/>
+                    </svg>
+                </div>
+                <div class="mini-info">
+                    <h4>Pro Player</h4>
+                    <span>مشغل فيديو احترافي</span>
+                </div>
+            </div>
+
+            <div class="mini-app">
+                <div class="mini-icon" style="background: linear-gradient(135deg, #34d399, #22d3ee);">
+                    <!-- Mosque / crescent -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#080b14" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3c-1.5 2.5-2 5-2 7.5 0 3 1.5 5.5 4 7"/>
+                        <path d="M8 21h8"/>
+                        <path d="M12 17v4"/>
+                        <path d="M7 12h2"/>
+                        <path d="M15 12h2"/>
+                        <path d="M9 8h6"/>
+                    </svg>
+                </div>
+                <div class="mini-info">
+                    <h4>ProAzan</h4>
+                    <span>برنامج الأذان</span>
+                </div>
+            </div>
+
         </div>
     </div>
-
 </main>
 
-<!-- Features -->
-
-<section id="features">
-
+<!-- Apps Section -->
+<section id="apps">
     <div class="section-title">
-        <h2>لماذا <span class="gradient-text">Promusic؟</span></h2>
-        <p>كل ما تحتاجه للاستمتاع بموسيقاك.</p>
+        <h2>تطبيقات <span class="gradient-text">App Lap</span></h2>
+        <p>اختر التطبيق اللي يناسبك وحمّله مباشرة</p>
     </div>
 
-    <div class="features">
+    <div class="apps-grid">
 
-        <div class="feature">
-            <div class="feature-icon">♫</div>
-            <h3>تجربة موسيقية</h3>
-            <p>واجهة عصرية تساعدك على الاستمتاع بموسيقاك بسهولة.</p>
+        <!-- Promusic -->
+        <div class="app-card">
+            <div class="app-badge">موسيقى</div>
+            <div class="app-icon" style="background: linear-gradient(135deg, #38d9ff, #818cf8);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#080b14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18V5l12-2v13"/>
+                    <circle cx="6" cy="18" r="3"/>
+                    <circle cx="18" cy="16" r="3"/>
+                </svg>
+            </div>
+            <h3>Promusic</h3>
+            <p>مشغل موسيقى بتصميم عصري وأنيق. استمتع بملفاتك الصوتية في مكان واحد بواجهة مريحة وسهلة.</p>
+            <a href="https://drive.google.com/uc?export=download&id=1Li7l96rCvOBcbeC-uQkNIePNBrbOOgp7"
+               class="btn btn-primary">
+                ↓ تحميل APK
+            </a>
         </div>
 
-        <div class="feature">
-            <div class="feature-icon">⚡</div>
-            <h3>أداء سريع</h3>
-            <p>تصميم خفيف وسهل الاستخدام على هاتفك.</p>
+        <!-- Pro Player -->
+        <div class="app-card">
+            <div class="app-badge">فيديو</div>
+            <div class="app-icon" style="background: linear-gradient(135deg, #f472b6, #c084fc);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#080b14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="3"/>
+                    <polygon points="10 9 16 12 10 15 10 9" fill="#080b14"/>
+                </svg>
+            </div>
+            <h3>Pro Player</h3>
+            <p>مشغل فيديو احترافي يدعم أغلب الصيغ. واجهة نظيفة، تشغيل سلس، وتحكم كامل في تجربة المشاهدة.</p>
+            <a href="https://drive.google.com/uc?export=download&id=1AGFEr9WZ2zKwR7dqRhhWmM1eCsauJ5SJ"
+               class="btn btn-primary">
+                ↓ تحميل APK
+            </a>
         </div>
 
-        <div class="feature">
-            <div class="feature-icon">🎧</div>
-            <h3>ملفاتك الصوتية</h3>
-            <p>استمتع بمكتبتك الموسيقية وملفاتك الصوتية.</p>
-        </div>
-
-        <div class="feature">
-            <div class="feature-icon">◈</div>
-            <h3>تصميم أنيق</h3>
-            <p>ألوان عصرية وتجربة استخدام مريحة للعين.</p>
-        </div>
-
-        <div class="feature">
-            <div class="feature-icon">📱</div>
-            <h3>مناسب للموبايل</h3>
-            <p>واجهة متجاوبة مع أحجام شاشات الهواتف المختلفة.</p>
-        </div>
-
-        <div class="feature">
-            <div class="feature-icon">♥</div>
-            <h3>استمتع بطريقتك</h3>
-            <p>اجعل الموسيقى جزءاً من يومك مع Promusic.</p>
+        <!-- ProAzan -->
+        <div class="app-card">
+            <div class="app-badge">أذان</div>
+            <div class="app-icon" style="background: linear-gradient(135deg, #34d399, #22d3ee);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#080b14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3c-1.5 2.5-2 5-2 7.5 0 3 1.5 5.5 4 7"/>
+                    <path d="M8 21h8"/>
+                    <path d="M12 17v4"/>
+                    <path d="M7 12h2"/>
+                    <path d="M15 12h2"/>
+                    <path d="M9 8h6"/>
+                </svg>
+            </div>
+            <h3>ProAzan</h3>
+            <p>تطبيق الأذان يذكّرك بمواقيت الصلاة، يعرض الأذان بصوت واضح، ويساعدك على تنظيم يومك بسهولة.</p>
+            <a href="https://drive.google.com/uc?export=download&id=1FytsnVfG74m4KVRvWX-OUXL86_eR6wsd"
+               class="btn btn-primary">
+                ↓ تحميل APK
+            </a>
         </div>
 
     </div>
 </section>
 
-<!-- Download -->
-
-<section id="download">
-
-    <div class="download-box">
-
-        <div class="brand-logo" style="margin:0 auto 20px">
-            P
-        </div>
-
-        <h2>جاهز لتجربة <span class="gradient-text">Promusic؟</span></h2>
-
-        <p>حمّل التطبيق وابدأ الاستمتاع بموسيقاك.</p>
-
-        <a href="https://drive.google.com/uc?export=download&id=1Li7l96rCvOBcbeC-uQkNIePNBrbOOgp7"
-           class="btn btn-primary">
-            تحميل Promusic APK ↓
-        </a>
-
-        <div class="download-info">
-            <span>● Android APK</span>
-            <span>● الإصدار 1.0</span>
-            <span>● تحميل مباشر</span>
-        </div>
-
+<!-- Features -->
+<section>
+    <div class="section-title">
+        <h2>لماذا <span class="gradient-text">App Lap؟</span></h2>
+        <p>نهتم بالتصميم والأداء وتجربة المستخدم</p>
     </div>
 
+    <div class="features">
+        <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <h3>أداء سريع</h3>
+            <p>تطبيقات خفيفة وسريعة على معظم الهواتف.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">◈</div>
+            <h3>تصميم أنيق</h3>
+            <p>واجهات عصرية مريحة للعين وسهلة الاستخدام.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">↓</div>
+            <h3>تحميل مباشر</h3>
+            <p>روابط تحميل مباشرة بدون تعقيدات.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Download CTA -->
+<section id="download">
+    <div class="download-box">
+        <div class="brand-logo">AL</div>
+        <h2>جاهز تجرب تطبيقات <span class="gradient-text">App Lap؟</span></h2>
+        <p>اختر التطبيق من الأعلى وحمّله مباشرة على جهازك.</p>
+        <a href="#apps" class="btn btn-primary">
+            اذهب للتطبيقات
+        </a>
+    </div>
 </section>
 
 <footer>
     <p>
         © <span id="year"></span>
-        <strong>Promusic</strong> — جميع الحقوق محفوظة
+        <strong>App Lap</strong> — جميع الحقوق محفوظة
     </p>
-    <p style="margin-top:8px">Made with ♥ for music lovers</p>
+    <p style="margin-top:8px">Made with ♥ for app lovers</p>
 </footer>
 
 </div>
 
 <script>
-document.getElementById("year").textContent =
-    new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
